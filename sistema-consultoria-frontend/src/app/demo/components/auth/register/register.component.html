@@ -1,0 +1,48 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&family=Manrope:wght@200..800&family=Oswald:wght@200..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+
+
+<div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+    <div class="flex flex-column align-items-center justify-content-center">
+        <a href="/home">
+            <img src="assets/layout/images/{{layoutService.config().colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo" class="mb-5 w-6rem flex-shrink-0" style="cursor: pointer;">
+        </a>
+        
+        <div style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
+            <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius:53px">
+                <div class="text-center mb-5">
+                    <div class="text-900 text-3xl font-medium mb-3">Crear una cuenta</div>
+                    <span class="text-600 font-medium">Por favor ingresa la información para el registro.</span>
+                </div>
+
+                <div class="grid">
+                    <div class="col-12 md:col-6">
+                        <label for="nombre" class="block text-900 text-xl font-medium mb-2">Nombre</label>
+                        <input id="nombre" type="text" placeholder="Nombre" pInputText class="w-full mb-3" style="padding:1rem" [(ngModel)]="user.nombre" name="nombre">
+                
+                        <label for="email" class="block text-900 text-xl font-medium mb-2">Email</label>
+                        <input id="email" type="text" placeholder="Email address" pInputText class="w-full mb-3" style="padding:1rem" [(ngModel)]="user.email" name="email">
+                
+                        <label for="username" class="block text-900 text-xl font-medium mb-2">Nombre de usuario</label>
+                        <input id="username" type="text" placeholder="Nombre de usuario" pInputText class="w-full mb-3" style="padding:1rem" [(ngModel)]="user.username" name="username">
+                    </div>
+                
+                    <div class="col-12 md:col-6">
+                        <label for="apellido" class="block text-900 text-xl font-medium mb-2">Apellido</label>
+                        <input id="apellido" type="text" placeholder="Apellido" pInputText class="w-full mb-3" style="padding:1rem" [(ngModel)]="user.apellido" name="apellido">
+                
+                        <label for="telefono" class="block text-900 text-xl font-medium mb-2">Teléfono</label>
+                        <input id="telefono" type="text" placeholder="Teléfono" pInputText class="w-full mb-3" style="padding:1rem" [(ngModel)]="user.telefono" name="telefono">
+                
+                        <label for="password" class="block text-900 text-xl font-medium mb-2">Contraseña</label>
+                        <p-password id="password" [(ngModel)]="user.password" placeholder="Contraseña" [toggleMask]="true" styleClass="mb-3" inputStyleClass="w-full p-3" name="password"></p-password>
+                    </div>
+                </div>
+                
+                <!-- Botón que llama a la función formSubmit -->
+                <button pButton pRipple label="Registrarme" class="w-full p-3 text-xl mt-5" (click)="formSubmit()"></button>
+                
+        </div>
+    </div>
+</div>

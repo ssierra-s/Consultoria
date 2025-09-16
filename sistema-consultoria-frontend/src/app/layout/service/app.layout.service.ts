@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, effect, signal } from '@angular/core';
 import { Subject } from 'rxjs';
 import baseUrl from 'src/app/services/helper';
@@ -20,6 +20,7 @@ interface LayoutState {
     staticMenuMobileActive: boolean;
     menuHoverActive: boolean;
 }
+
 
 @Injectable({
     providedIn: 'root',
@@ -68,10 +69,11 @@ export class LayoutService {
         return this.httpClient.post(`${baseUrl}/usuarios/`, user)
     }
 
-
+    
     // Token
     public generateToken(loginData: any) {
         return this.httpClient.post(`${baseUrl}/generate-token/`, loginData);
+    
     }
 
 
